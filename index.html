@@ -1797,9 +1797,19 @@
             }
           });
         },
-        { threshold: 0.12 },
+        { threshold: 0, rootMargin: "0px 0px -5% 0px" },
       );
       reveals.forEach((r) => obs.observe(r));
+
+      // LƯỚI AN TOÀN: nếu vì lý do gì đó (trình duyệt cũ, timing lỗi...)
+      // mà observer không kích hoạt, tự động hiện các phần tử còn ẩn
+      // sau 1.5s để không bao giờ bị kẹt trống trơn vĩnh viễn.
+      setTimeout(() => {
+        document.querySelectorAll(".reveal:not(.in)").forEach((r) => {
+          r.classList.add("in");
+          obs.unobserve(r);
+        });
+      }, 1500);
     </script>
   </body>
 </html>
