@@ -532,10 +532,13 @@
       .pg-item.sm .pg-img {
         height: 260px;
       }
+      .pg-img {
+        background: var(--sand);
+      }
       .pg-img img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
         transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
       }
       .pg-item:hover .pg-img img {
@@ -707,11 +710,12 @@
         width: 80%;
         aspect-ratio: 3/4;
         overflow: hidden;
+        background: var(--sand);
       }
       .about-img1 img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
       }
       .about-img2 {
         position: absolute;
@@ -721,11 +725,12 @@
         aspect-ratio: 4/3;
         overflow: hidden;
         border: 6px solid var(--sand);
+        background: var(--sand);
       }
       .about-img2 img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
       }
       .about-text {
       }
